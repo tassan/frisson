@@ -1,17 +1,8 @@
-from flask import Flask
+from flask import Flask, url_for, render_template
 app = Flask('frisson')
 
 
 @app.route('/')
-def main():
-    return 'Welcome to the frisson'
+def index():
+    return render_template('index.html')
 
-
-@app.route('/hello/')
-def hello():
-    return 'Hello World!'
-
-
-@app.route('/hello_user/<username>')
-def hello_user(username):
-    return 'Hello %s' % username
